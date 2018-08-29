@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1535564487 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TAD_sequencia/main.c
+	<stdio.h>
+	<stdlib.h>
+	"TAD_sequencia.h"
+
+1535497499 /home/carlos_vinicios/Documentos/GitHub/ED1/TAD_sequencia/TAD_sequencia.h
+
+1535563949 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TAD_sequencia/TAD_sequencia.c
+	"TAD_sequencia.h"
+	"stdio.h"
+	"stdlib.h"
+
