@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1535956041 source:c:\users\desktop\documents\cpp\atividade_a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TAD_evento.h"
+
+1535955980 c:\users\desktop\documents\cpp\atividade_a\tad_evento.h
+
+1535956073 source:c:\users\desktop\documents\cpp\atividade_a\tad_evento.c
+	<stdio.h>
+	<stdlib.h>
+	"TAD_evento.h"
+
