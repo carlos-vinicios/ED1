@@ -31,7 +31,7 @@ int Remove(Sequencia *seq, int chave);
 /* Procura um dado elemento na sequencia
     @param seq a sequencia válida
     @param chave o parametro que deseja buscar
-    @return a posição do elemento no vetor e -1 caso não exista no vetor
+    @return 1 caso exista 0 caso não exista ou dê algum erro
 */
 int Search(Sequencia *seq, int chave);
 
