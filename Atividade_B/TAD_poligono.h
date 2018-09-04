@@ -1,8 +1,17 @@
+#ifndef TAD_poligono
+#define TAD_poligono
+
+//Estrutura para controle das coordenadas
+typedef struct _Ponto_{
+    float x;
+    float y;
+} Ponto;
+
 //TAD para manipular o registro de polígonos
 typedef struct _Poligono_{
-    float *x;
-    float *y;
+    Ponto *ponto;
     int qtd_lados;
+    int qtd_registrados;
 } Poligono;
 
 /*Cria a sequencia de coordenadas de um polígono
@@ -17,7 +26,7 @@ Poligono *criarPoligono(int qtd_lados);
     @param y coordenadas do eixo y
     @return 1 sucesso 0 falha
 */
-int inserirCoordenadas(Poligono *pol, float x*, float *y);
+int inserirCoordenadas(Poligono *pol, float x, float y);
 
 /*Imprime as coordenadas do polígono
     @param pol sequencia de um polígono valida
@@ -42,3 +51,5 @@ float *tamLadosPoligono(Poligono *pol);
     @return 1 sucesso 0 falha
 */
 int destruirPoligono(Poligono **pol);
+
+#endif

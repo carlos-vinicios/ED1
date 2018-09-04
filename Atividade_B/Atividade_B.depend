@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1535992510 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Atividade_B/main.c
+	<stdio.h>
+	<stdlib.h>
+	"TAD_poligono.h"
+
+1536010025 /home/carlos_vinicios/Documentos/GitHub/ED1/Atividade_B/TAD_poligono.h
+
+1535992315 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Atividade_B/TAD_poligono.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"TAD_poligono.h"
+

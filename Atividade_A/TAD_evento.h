@@ -1,40 +1,44 @@
+#ifndef TAD_evento
+#define TAD_evento
+
 //TAD para manipular as entradas de um evento
 typedef struct _Evento_{
     int *entradas; //vetor contendo as entradas registradas
     int qtd_entradas; //quantidade de entradas realizadas
-    int qtd_max; //quantidade máxima de entradas permitidas
+    int qtd_max; //quantidade mï¿½xima de entradas permitidas
 } Evento;
 
-/* Realiza a criação do TAD evento
-    @param qtd_max o tamanho máximo desejado para o evento
-    @return sequencia alocada e válida NULL em caso de erro
+/* Realiza a criaï¿½ï¿½o do TAD evento
+    @param qtd_max o tamanho mï¿½ximo desejado para o evento
+    @return sequencia alocada e vï¿½lida NULL em caso de erro
 */
 Evento *criaEvento(int qtd_max);
 
 /* Registra uma nova entrada no evento
-    @param evento sequencia válida
-    @param id número de entrada
+    @param evento sequencia vï¿½lida
+    @param id nï¿½mero de entrada
     @return 1 sucesso 0 falha
 */
-int novaEntrada(Evento *evento, int id);
+int novaEntrada(Evento *evento, int chave);
 
-/* Realiza a busca por um valor dentro da sequência
-    @param evento sequencia válida
+/* Realiza a busca por um valor dentro da sequï¿½ncia
+    @param evento sequencia vï¿½lida
     @param chave valor buscado dentro da sequencia
     @return 1 sucesso 0 falha
 */
 int procuraEntrada(Evento *evento, int chave);
 
-/* Realiza a remoção de um valor da sequência
-    @param evento sequência válida
+/* Realiza a remoï¿½ï¿½o de um valor da sequï¿½ncia
+    @param evento sequï¿½ncia vï¿½lida
     @param chave valor a ser excluido
     @return 1 sucesso 0 falha
 */
 int removerEntrada(Evento *evento, int chave);
 
-/* Realiza a destruição da sequência
-    @param evento sequência válida
+/* Realiza a destruiï¿½ï¿½o da sequï¿½ncia
+    @param evento sequï¿½ncia vï¿½lida
     @return 1 sucesso 0 falha
 */
 int destruitEvento(Evento **evento);
 
+#endif
