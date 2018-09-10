@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1536578230 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TAD_generico/main.c
+	<stdio.h>
+	<stdlib.h>
+	"TAD_generico.h"
+
+1536578519 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TAD_generico/TAD_generico.c
+	<stdio.h>
+	<stdlib.h>
+	"TAD_generico.h"
+
+1536578395 /home/carlos_vinicios/Documentos/GitHub/ED1/TAD_generico/TAD_generico.h
+
