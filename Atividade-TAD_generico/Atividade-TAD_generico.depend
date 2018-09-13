@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1536765821 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Atividade-TAD_generico/main.c
+	<stdio.h>
+	<stdlib.h>
+	"TAD_generico.h"
+
+1536761961 /home/carlos_vinicios/Documentos/GitHub/ED1/Atividade-TAD_generico/TAD_generico.h
+
+1536766148 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Atividade-TAD_generico/TAD_generico.c
+	<stdlib.h>
+	"TAD_generico.h"
+

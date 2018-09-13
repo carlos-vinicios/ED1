@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1536766308 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TAD_imagem/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1536808931 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TAD_imagem/TAD_imagem.c
+	<stdlib.h>
+	"TAD_imagem.h"
+
+1536808921 /home/carlos_vinicios/Documentos/GitHub/ED1/TAD_imagem/TAD_imagem.h
+

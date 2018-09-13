@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1536845818 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TAD_fila/TAD_fila.c
+	<stdlib.h>
+	"TAD_fila.h"
+
+1536812194 /home/carlos_vinicios/Documentos/GitHub/ED1/TAD_fila/TAD_fila.h
+
+1536845174 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TAD_fila/main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"TAD_fila.h"
+
