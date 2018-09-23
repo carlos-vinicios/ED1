@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1537742044 source:c:\users\desktop\documents\cpp\teste_lista_ed\main.cpp
+	<iostream>
+	"testes.h"
+	<stdlib.h>
+	<string.h>
+
+1537741993 source:c:\users\desktop\documents\cpp\teste_lista_ed\testes.cpp
+	"testes.h"
+	<stdlib.h>
+
+1537741520 c:\users\desktop\documents\cpp\teste_lista_ed\testes.h
+
