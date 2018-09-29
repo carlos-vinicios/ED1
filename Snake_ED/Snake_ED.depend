@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1538236722 source:c:\users\desktop\documents\cpp\snake_ed\tad_fila.cpp
+	<stdlib.h>
+	"TAD_fila.h"
+
+1538236716 c:\users\desktop\documents\cpp\snake_ed\tad_fila.h
+
+1538236728 source:c:\users\desktop\documents\cpp\snake_ed\tad_pilha.cpp
+	<stdlib.h>
+	"TAD_pilha.h"
+
+1538236712 c:\users\desktop\documents\cpp\snake_ed\tad_pilha.h
+
+1538236775 source:c:\users\desktop\documents\cpp\snake_ed\main.cpp
+	<stdlib.h>
+	<stdio.h>
+	"TAD_fila.h"
+	"TAD_pilha.h"
+	"cenario.h"
+	"snake.h"
+
+1538236674 c:\users\desktop\documents\cpp\snake_ed\snake.h
+
+1538238819 c:\users\desktop\documents\cpp\snake_ed\cenario.h
+
+1538237608 source:c:\users\desktop\documents\cpp\snake_ed\snake.cpp
+	<stdlib.h>
+	"TAD_fila.h"
+	"TAD_pilha.h"
+	"snake.h"
+
