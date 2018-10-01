@@ -3,11 +3,15 @@
 	<stdlib.h>
 	"TAD_fila.h"
 
+1538236722 h"
+
 1538236716 c:\users\desktop\documents\cpp\snake_ed\tad_fila.h
 
 1538236728 source:c:\users\desktop\documents\cpp\snake_ed\tad_pilha.cpp
 	<stdlib.h>
 	"TAD_pilha.h"
+
+1538236728 .h"
 
 1538236712 c:\users\desktop\documents\cpp\snake_ed\tad_pilha.h
 
@@ -22,6 +26,8 @@
 	<conio.h>
 	<Windows.h>
 	<iostream>
+
+1538373347 
 
 1538371123 c:\users\desktop\documents\cpp\snake_ed\snake.h
 
@@ -44,4 +50,42 @@
 	"fruta.h"
 
 1538373361 c:\users\desktop\documents\cpp\snake_ed\fruta.h
+
+1538396575 source:/home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/cenario.cpp
+	<iostream>
+	<stdlib.h>
+
+1538396575 source:/home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/fruta.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"fruta.h"
+
+1538396575 /home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/fruta.h
+
+1538396575 source:/home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/snake.cpp
+	<stdlib.h>
+	"TAD_fila.h"
+	"TAD_pilha.h"
+	"snake.h"
+
+1538396575 /home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/TAD_fila.h
+
+1538396575 /home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/TAD_pilha.h
+
+1538396575 /home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/snake.h
+
+1538396575 source:/home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/TAD_fila.cpp
+	<stdlib.h>
+	"TAD_fila.h"
+
+1538396575 source:/home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/TAD_pilha.cpp
+	<stdlib.h>
+	"TAD_pilha.h"
+
+1538399852 source:/home/carlos_vinicios/Documentos/C codes/ED1/Snake_ED/main.cpp
+	<stdio.h>
+	<termios.h>
+	<unistd.h>
+	<fcntl.h>
 
