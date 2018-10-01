@@ -3,7 +3,7 @@
 
 Fila *set_snake(int tam);
 
-int draw_snake(Fila *snake, char **cenario, int linha, int coluna, int orientacao, int direcao);
+void draw_snake(Fila *snake, char **cenario, int linha, int coluna, int orientacao, int direcao, int tam_cenario);
 
 void move_snake(int direcao, int orientacao, int *linha, int *coluna);
 

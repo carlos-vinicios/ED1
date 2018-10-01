@@ -11,21 +11,37 @@
 
 1538236712 c:\users\desktop\documents\cpp\snake_ed\tad_pilha.h
 
-1538236775 source:c:\users\desktop\documents\cpp\snake_ed\main.cpp
+1538374637 source:c:\users\desktop\documents\cpp\snake_ed\main.cpp
 	<stdlib.h>
 	<stdio.h>
 	"TAD_fila.h"
 	"TAD_pilha.h"
 	"cenario.h"
 	"snake.h"
+	"fruta.h"
+	<conio.h>
+	<Windows.h>
+	<iostream>
 
-1538236674 c:\users\desktop\documents\cpp\snake_ed\snake.h
+1538371123 c:\users\desktop\documents\cpp\snake_ed\snake.h
 
 1538238819 c:\users\desktop\documents\cpp\snake_ed\cenario.h
 
-1538237608 source:c:\users\desktop\documents\cpp\snake_ed\snake.cpp
+1538374142 source:c:\users\desktop\documents\cpp\snake_ed\snake.cpp
 	<stdlib.h>
 	"TAD_fila.h"
 	"TAD_pilha.h"
 	"snake.h"
+
+1538364794 source:c:\users\desktop\documents\cpp\snake_ed\cenario.cpp
+	<iostream>
+	<stdlib.h>
+
+1538373347 source:c:\users\desktop\documents\cpp\snake_ed\fruta.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"fruta.h"
+
+1538373361 c:\users\desktop\documents\cpp\snake_ed\fruta.h
 

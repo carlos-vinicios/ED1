@@ -38,6 +38,8 @@
 		<Unit filename="TAD_pilha.h" />
 		<Unit filename="cenario.cpp" />
 		<Unit filename="cenario.h" />
+		<Unit filename="fruta.cpp" />
+		<Unit filename="fruta.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="snake.cpp" />
 		<Unit filename="snake.h" />

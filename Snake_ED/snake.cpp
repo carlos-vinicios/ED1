@@ -3,59 +3,76 @@
 #include "TAD_pilha.h"
 #include "snake.h"
 
-/* Para setar o tamanho máximo que a snake terá, será passado o tamanho do cenário*/
+/*Para setar o tamanho máximo que a snake terá, será passado o tamanho do cenário*/
 Fila *set_snake(int tam){
     Fila *snake;
+    int i;
     snake = criarFila(tam);
+    for(i=0;i<3;i++)
+        adicionar(snake, '*');
     return snake;
 }
 
-int draw_snake(Fila *snake, char **cenario, int linha, int col, int orientacao, int direcao){
+void draw_snake(Fila *snake, char **cenario, int linha, int col, int orientacao, int direcao, int tam_cenario){
+    Fila *f_aux = criarFila(snake->qtd);
+    char aux;
     if(cenario != NULL){
         if(orientacao == 180){
             if(direcao > 0){
                 while(!filaVazia(snake)){
-                    cenario[linha][col] = remover(snake);
+                    aux = remover(snake);
+                    if(col > 0)
+                        cenario[linha][col] = aux;
+                    adicionar(f_aux, aux);
                     col--;
                 }
             }else{
                 while(!filaVazia(snake)){
-                    cenario[linha][col] = remover(snake);
+                    aux = remover(snake);
+                    if(col < 3*tam_cenario-1)
+                        cenario[linha][col] = aux;
+                    adicionar(f_aux, aux);
                     col++;
                 }
             }
         }else{
             if(direcao > 0){
                 while(!filaVazia(snake)){
-                    cenario[linha][col] = remover(snake);
+                    aux = remover(snake);
+                    if(linha > 0)
+                        cenario[linha][col] = aux;
+                    adicionar(f_aux, aux);
                     linha--;
                 }
             }else{
                 while(!filaVazia(snake)){
-                    cenario[linha][col] = remover(snake);
+                    aux = remover(snake);
+                    if(linha < tam_cenario-1)
+                        cenario[linha][col] = aux;
+                    adicionar(f_aux, aux);
                     linha++;
                 }
             }
         }
-
-        return 1;
+        while(!filaVazia(f_aux)){
+            adicionar(snake, remover(f_aux));
+        }
+        destruirFila(f_aux);
     }
-
-    return 0;
 }
 
 void move_snake(int direcao, int orientacao, int *linha, int *coluna){
     if(orientacao == 180){
         if(direcao > 0){ //direta
-            *coluna++;
+            (*coluna)++;
         }else{ //esquerda
-            *coluna--;
+            (*coluna)--;
         }
     }else{ //== 90
         if(direcao > 0){ //cima
-            *linha++;
+            (*linha)++;
         }else{ //baixo
-            *linha--;
+            (*linha)--;
         }
     }
 }
@@ -64,7 +81,7 @@ void move_snake(int direcao, int orientacao, int *linha, int *coluna){
 int hit_wall(int linha, int coluna, int tam_cenario){
     if(linha == 0 || linha == tam_cenario-1)
         return 1;
-    if(coluna == 0 || coluna == tam_cenario-1 )
+    if(coluna == 0 || coluna == 3*tam_cenario-1 )
         return 1;
 
     return 0;
@@ -86,6 +103,7 @@ void eat_fruit(Fila *snake){
             adicionar(snake, desempilhar(p));
         }
     }
+    destruirPilha(p);
 }
 
 int snake_die(Fila *snake){
