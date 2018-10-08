@@ -89,3 +89,52 @@
 	<unistd.h>
 	<fcntl.h>
 
+1538412688 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/cenario.cpp
+	<iostream>
+	<stdlib.h>
+
+1538412688 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/fruta.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"fruta.h"
+
+1538411148 /home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/fruta.h
+
+1538412688 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/main.cpp
+	<stdlib.h>
+	<stdio.h>
+	<iostream>
+	"TAD_fila.h"
+	"TAD_pilha.h"
+	"cenario.h"
+	"snake.h"
+	"fruta.h"
+	<sys/ioctl.h>
+	<termios.h>
+	<unistd.h>
+	<conio.h>
+	<Windows.h>
+
+1538411148 /home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/TAD_fila.h
+
+1538411148 /home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/TAD_pilha.h
+
+1538411148 /home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/cenario.h
+
+1538411148 /home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/snake.h
+
+1538412644 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/snake.cpp
+	<stdlib.h>
+	"TAD_fila.h"
+	"TAD_pilha.h"
+	"snake.h"
+
+1538412688 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/TAD_fila.cpp
+	<stdlib.h>
+	"TAD_fila.h"
+
+1538411148 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Snake_ED/TAD_pilha.cpp
+	<stdlib.h>
+	"TAD_pilha.h"
+

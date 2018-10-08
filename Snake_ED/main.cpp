@@ -8,7 +8,7 @@
 #include "fruta.h"
 
 //caso esteja no Linux, descomentar a proxima linha
-#define LINUX
+//#define LINUX
 
 #ifdef LINUX
     #include <sys/ioctl.h>
@@ -67,7 +67,7 @@ int main(){
     Fruta *fruta;
     int cen_tam, pnts, lin, col, orien, dire, vel, exec=1;
     char **cenario;
-    
+
     //Defini��es iniciais do jogo
     lin = 3; //linha inicial
     col = 4; //coluna inicial
@@ -77,7 +77,7 @@ int main(){
     #ifndef LINUX
     vel = 300; //tempo que passa no sleep
     #else
-    vel = 1000000;
+    vel = 100000;
     #endif
     pnts=0;
     //fim das defini��es iniciais
@@ -143,7 +143,7 @@ int main(){
     }else{
         cout << "Erro na inicializacao do jogo, veja seu sistema operacional ou estado de memoria";
     }
-    #ifndef LINUX      
+    #ifndef LINUX
     system("CLS");
     #else
     system("clear");

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1539019799 source:/home/carlos_vinicios/Documentos/Pilha_lista/main.cpp
+	<iostream>
+
+1539022622 source:/home/carlos_vinicios/Documentos/Pilha_lista/Pilha_lista.cpp
+	<stdlib.h>
+	"Pilha_lista.h"
+
+1539022308 /home/carlos_vinicios/Documentos/Pilha_lista/Pilha_lista.h
+
