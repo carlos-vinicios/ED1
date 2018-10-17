@@ -21,16 +21,18 @@ int push(Pilha *p, void *dado){
         p->qtd++;
         return 1;
     }
-
     return 0;
 }
 
 void *pop(Pilha *p){
-    void *dado = NULL;
+    Lista *rem; //elemento a ser removido
+    void *dado = NULL; //dado que irá ser retornado
     if(p != NULL && p->dados->dado != NULL){
-        dado = p->dados->dado;
-        p->dados = p->dados->prox;
+        rem = p->dados;
+        dado = rem->dado;
+        p->dados = rem->prox;
         p->qtd--;
+        delete[] rem;
     }
     return dado;
 }
