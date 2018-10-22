@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1540137727 source:c:\users\desktop\documents\cpp\dicionariosinonimos\main.cpp
+	<iostream>
+	"dicionario.h"
+
+1540136713 c:\users\desktop\documents\cpp\dicionariosinonimos\dicionario.h
+
+1540137754 source:c:\users\desktop\documents\cpp\dicionariosinonimos\dicionario.cpp
+	<stdlib.h>
+	<string.h>
+	"dicionario.h"
+
