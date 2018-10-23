@@ -18,6 +18,8 @@ int push(Lista *l, int value);
 
 int pushAfter(Lista *l, int index, int value);
 
+int findElement(Lista *l, int key);
+
 Lista *concat(Lista *l1, Lista *l2);
 
 Lista *concatOrder(Lista *l1, Lista *l2);

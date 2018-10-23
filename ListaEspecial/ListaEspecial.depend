@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1540262397 source:c:\users\desktop\documents\github\ed1\listaespecial\main.cpp
+	<iostream>
+	"lista.h"
+
+1540262655 source:c:\users\desktop\documents\github\ed1\listaespecial\lista.cpp
+	<stdlib.h>
+	"lista.h"
+
+1540254109 c:\users\desktop\documents\github\ed1\listaespecial\lista.h
+
