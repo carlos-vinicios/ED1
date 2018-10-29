@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1539202247 source:/home/carlos_vinicios/Documentos/Jolly Jumper/Pilha_lista.cpp
+	<stdlib.h>
+	"Pilha_lista.h"
+
+1539202251 /home/carlos_vinicios/Documentos/Jolly Jumper/Pilha_lista.h
+
+1539202220 source:/home/carlos_vinicios/Documentos/Jolly Jumper/main.cpp
+	<iostream>
+	<math.h>
+	"Pilha_lista.h"
+
