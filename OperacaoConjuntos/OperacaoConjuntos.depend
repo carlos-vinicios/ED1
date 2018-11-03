@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1539845400 source:/home/carlos_vinicios/Documentos/OperacaoConjuntos/main.cpp
+	<iostream>
+	<stdlib.h>
+	"lista.h"
+
+1539807824 /home/carlos_vinicios/Documentos/OperacaoConjuntos/lista.h
+
+1539845424 source:/home/carlos_vinicios/Documentos/OperacaoConjuntos/listas.cpp
+	"lista.h"
+	<stdlib.h>
+
