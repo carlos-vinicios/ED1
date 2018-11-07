@@ -2,3 +2,15 @@
 1540408807 source:/home/carlos_vinicios/Documentos/RedeDeAmigos/main.cpp
 	<iostream>
 
+1541352559 source:c:\users\desktop\documents\github\ed1\rededeamigos\main.cpp
+	<iostream>
+	"stdlib.h"
+	"lista.h"
+
+1541351005 c:\users\desktop\documents\github\ed1\rededeamigos\lista.h
+
+1541352531 source:c:\users\desktop\documents\github\ed1\rededeamigos\lista.cpp
+	<iostream>
+	"stdlib.h"
+	"lista.h"
+
