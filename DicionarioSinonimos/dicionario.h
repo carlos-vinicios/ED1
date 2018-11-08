@@ -1,6 +1,7 @@
 
 typedef struct _palavra_{
     char *sintaxe;
+    int qtd;
     _palavra_ *sinonimo;
     _palavra_ *prox;
 } Palavra;
@@ -14,8 +15,12 @@ Dicionario *criarDicionario();
 
 Palavra *criarPalavra(char *sintaxe);
 
-int add(Dicionario *d, char *palavra);
+Palavra *addPalavra(Dicionario *d, char *palavra);
 
 int addSinonimo(Dicionario *d, char *palavra, char *sinonimo);
 
-Palavra *buscaPalavra(Dicionario *d, char *palavra);
+Palavra *buscarPalavra(Dicionario *d, char *palavra);
+
+Palavra *substituirPalavra(Dicionario *d, char *palavra);
+
+char *formalizarTexto(Dicionario *d, char *paragrafo);

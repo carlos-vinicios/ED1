@@ -1,6 +1,9 @@
+#include <iostream>
 #include <stdlib.h>
 #include <string.h>
 #include "dicionario.h"
+
+using namespace std;
 
 Dicionario *criarDicionario(){
     Dicionario *d1 = new Dicionario[1];
@@ -17,12 +20,13 @@ Palavra *criarPalavra(char *sintaxe){
             p1->sintaxe = sintaxe;
             p1->sinonimo = NULL;
             p1->prox = NULL;
+            p1->qtd = 1;
         }
     }
     return p1;
 }
 
-int add(Dicionario *d, char *palavra){
+Palavra *addPalavra(Dicionario *d, char *palavra){
     Palavra *p1 = NULL;
     if(d != NULL && palavra != NULL && strlen(palavra) > 0){
         p1 = criarPalavra(palavra);
@@ -33,59 +37,36 @@ int add(Dicionario *d, char *palavra){
             d->ult->prox = p1;
             d->ult = p1;
         }
-        return 1;
     }
-    return 0;
+    return p1;
 }
 
 int addSinonimo(Dicionario *d, char* palavra, char *sinonimo){
-    Palavra *p, *p1 = NULL, *aux;
+    Palavra *p, *p1 = NULL, *p2 = NULL;
     if(d != NULL && palavra != NULL && sinonimo != NULL){
-        p = buscaPalavra(d, palavra);
+        p = buscarPalavra(d, palavra); //busca pela palavra que será adicionado o sinonimo
+        p1 = buscarPalavra(d, sinonimo); //verfica a existência do sinonimo dentro do dicionario
         if(p != NULL){
-            p1 = criarPalavra(sinonimo);
-            if(p->sinonimo == NULL)
-                p->sinonimo = p1;
+            p2 = criarPalavra(sinonimo); //cria a palavra de sinonimo
+            if(p1 != NULL){
+                p1->qtd++; //caso o sinonimo já tenho sido cadastrado no dicionario, atualiza a quantidade
+            }else{
+                p1 = addPalavra(d, sinonimo); //caso não exista, adiciona a mesma ao dicionario e incrementa a quantidade da mesma
+                p1->qtd++;
+            }
+            if(p->sinonimo == NULL) //adiciona a lista de sinonimos
+                p->sinonimo = p2;
             else{
-                p1->prox = p->sinonimo;
-                p->sinonimo = p1;
+                p2->prox = p->sinonimo;
+                p->sinonimo = p2;
             }
         }
         return 1;
     }
-//        if(strcmp(d->cab->sintaxe, palavra) == 0){
-//            p1 = criarPalavra(sinonimo);
-//            if(d->cab->sinonimo == NULL)
-//                d->cab->sinonimo = p1;
-//            else{
-//                p1->prox = d->cab->sinonimo;
-//                d->cab->sinonimo = p1;
-//            }
-//        }else if(strcmp(d->ult->sintaxe, palavra) == 0){
-//            p1 = criarPalavra(sinonimo);
-//            if(d->ult->sinonimo == NULL)
-//                d->ult->sinonimo = p1;
-//            else{
-//                p1->prox = d->ult->sinonimo;
-//                d->ult->sinonimo = p1;
-//            }
-//        }else{
-//            aux = d->cab;
-//            while(aux != NULL){
-//                if(strcmp(aux->sintaxe, palavra)){
-//                    p1->prox = aux->sinonimo;
-//                    aux->sinonimo = p1;
-//                    break;
-//                }
-//                aux = aux->prox;
-//            }
-//        }
-//        return 1;
-//    }
     return 0;
 }
 
-Palavra *buscaPalavra(Dicionario *d, char *palavra){
+Palavra *buscarPalavra(Dicionario *d, char *palavra){
     Palavra *aux;
     if(strcmp(d->cab->sintaxe, palavra) == 0){
         return d->cab;
@@ -94,10 +75,64 @@ Palavra *buscaPalavra(Dicionario *d, char *palavra){
     }else{
         aux = d->cab;
         while(aux != NULL){
-            if(strcmp(aux->sintaxe, palavra)){
+            if(strcmp(aux->sintaxe, palavra) == 0){
                 return aux;
             }
             aux = aux->prox;
         }
     }
+    return NULL;
+}
+
+Palavra *substituirPalavra(Dicionario *d, char *palavra){
+    Palavra *p = NULL, *p2 = NULL, *aux = NULL, *resp = NULL;
+    if(d != NULL && palavra != NULL){
+        p = buscarPalavra(d, palavra);
+        if(p != NULL){
+            aux = p->sinonimo;
+            if(aux != NULL){
+                resp = buscarPalavra(d, aux->sintaxe);
+                aux = aux->prox;
+                while(aux != NULL){
+                    p2 = buscarPalavra(d, aux->sintaxe);
+                    if(p2->qtd < resp->qtd)
+                        resp = p2;
+                    aux = aux->prox;
+                }
+            }
+        }
+    }
+    return resp;
+}
+
+char *formalizarTexto(Dicionario *d, char *paragrafo){
+    char *palavra, *paragrafo_final=NULL, element[2];
+    Palavra *p=NULL;
+    int i, j=0;
+    if(d != NULL && paragrafo != NULL){
+        paragrafo_final = new char[strlen(paragrafo)];
+        palavra = new char[strlen(paragrafo)];
+        for(i=0; i < strlen(paragrafo); i++){
+            if(paragrafo[i] != ' ' && paragrafo[i] != ',' && paragrafo[i] != '.'){
+                palavra[j]=paragrafo[i];
+                j++;
+            }else{
+                palavra[j] = '\0';
+                j=0;
+                cout << palavra;
+                p = substituirPalavra(d, palavra);
+                if(p != NULL){
+                    strcat(paragrafo_final, p->sintaxe);
+                }else{
+                    strcat(paragrafo_final, palavra);
+                }
+                element[0] = paragrafo[i];
+                strcat(paragrafo_final, element);
+                delete[] palavra;
+                palavra = new char[strlen(paragrafo)];
+            }
+        }
+    }
+    cout << paragrafo_final;
+    return paragrafo_final;
 }

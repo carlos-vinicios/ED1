@@ -10,3 +10,15 @@
 	<string.h>
 	"dicionario.h"
 
+1541656414 source:c:\users\desktop\documents\github\ed1\dicionariosinonimos\dicionario.cpp
+	<iostream>
+	<stdlib.h>
+	<string.h>
+	"dicionario.h"
+
+1541651141 c:\users\desktop\documents\github\ed1\dicionariosinonimos\dicionario.h
+
+1541653983 source:c:\users\desktop\documents\github\ed1\dicionariosinonimos\main.cpp
+	<iostream>
+	"dicionario.h"
+

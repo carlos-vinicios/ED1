@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="dicionario.cpp" />
+		<Unit filename="dicionario.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

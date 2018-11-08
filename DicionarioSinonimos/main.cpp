@@ -13,7 +13,7 @@ void printDic(Dicionario *d1){
 
 void printSin(Dicionario *d1, char *palavra){
     Palavra *aux;
-    Palavra *p = buscaPalavra(d1, palavra);
+    Palavra *p = buscarPalavra(d1, palavra);
     if(p != NULL){
         aux = p->sinonimo;
         while(aux != NULL){
@@ -25,6 +25,18 @@ void printSin(Dicionario *d1, char *palavra){
 
 int main()
 {
+    char *texto;
     Dicionario *d1 = criarDicionario();
+
+    addPalavra(d1, "Testar");
+    addPalavra(d1, "Executar");
+    addSinonimo(d1, "Testar", "Verificar");
+    addSinonimo(d1, "Testar", "Analisar");
+    addSinonimo(d1, "Executar", "Fazer");
+    addSinonimo(d1, "Executar", "Realizar");
+
+    texto = formalizarTexto(d1, "Desejo executar varios projetos, afim de testar a capacidade de nossa equipe");
+
+    //cout << texto;
     return 0;
 }
