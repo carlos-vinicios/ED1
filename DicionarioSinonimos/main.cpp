@@ -30,13 +30,13 @@ int main()
 
     addPalavra(d1, "Testar");
     addPalavra(d1, "Executar");
-    addSinonimo(d1, "Testar", "Verificar");
-    addSinonimo(d1, "Testar", "Analisar");
-    addSinonimo(d1, "Executar", "Fazer");
-    addSinonimo(d1, "Executar", "Realizar");
+    addSinonimo(d1, "testar", "verificar");
+    addSinonimo(d1, "testar", "analisar");
+    addSinonimo(d1, "executar", "fazer");
+    addSinonimo(d1, "executar", "realizar");
 
     texto = formalizarTexto(d1, "Desejo executar varios projetos, afim de testar a capacidade de nossa equipe");
 
-    //cout << texto;
+    cout << texto;
     return 0;
 }

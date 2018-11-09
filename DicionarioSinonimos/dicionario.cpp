@@ -1,9 +1,19 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "dicionario.h"
 
 using namespace std;
+
+char *to_lower(char *palavra){
+    int i;
+    char *lower = new char[strlen(palavra)];
+    for(i=0; i < strlen(palavra); i++){
+        lower[i] = tolower(palavra[i]);
+    }
+    return lower;
+}
 
 Dicionario *criarDicionario(){
     Dicionario *d1 = new Dicionario[1];
@@ -29,7 +39,7 @@ Palavra *criarPalavra(char *sintaxe){
 Palavra *addPalavra(Dicionario *d, char *palavra){
     Palavra *p1 = NULL;
     if(d != NULL && palavra != NULL && strlen(palavra) > 0){
-        p1 = criarPalavra(palavra);
+        p1 = criarPalavra(to_lower(palavra));
         if(d->cab == NULL && d->ult == NULL){
             d->cab = p1;
             d->ult = p1;
@@ -108,19 +118,19 @@ Palavra *substituirPalavra(Dicionario *d, char *palavra){
 char *formalizarTexto(Dicionario *d, char *paragrafo){
     char *palavra, *paragrafo_final=NULL, element[2];
     Palavra *p=NULL;
-    int i, j=0;
+    int i, j=0, paragrafo_size;
     if(d != NULL && paragrafo != NULL){
-        paragrafo_final = new char[strlen(paragrafo)];
-        palavra = new char[strlen(paragrafo)];
-        for(i=0; i < strlen(paragrafo); i++){
-            if(paragrafo[i] != ' ' && paragrafo[i] != ',' && paragrafo[i] != '.'){
+        paragrafo_size = (int) strlen(paragrafo);
+        paragrafo_final = new char[paragrafo_size];
+        strcpy(paragrafo_final, "");
+        palavra = new char[paragrafo_size];
+        for(i=0; i < paragrafo_size; i++){
+            if(paragrafo[i] != ' ' && paragrafo[i] != ',' && paragrafo[i] != '.' && i < paragrafo_size-1){
                 palavra[j]=paragrafo[i];
                 j++;
             }else{
                 palavra[j] = '\0';
-                j=0;
-                cout << palavra;
-                p = substituirPalavra(d, palavra);
+                p = substituirPalavra(d, to_lower(palavra));
                 if(p != NULL){
                     strcat(paragrafo_final, p->sintaxe);
                 }else{
@@ -129,10 +139,10 @@ char *formalizarTexto(Dicionario *d, char *paragrafo){
                 element[0] = paragrafo[i];
                 strcat(paragrafo_final, element);
                 delete[] palavra;
-                palavra = new char[strlen(paragrafo)];
+                palavra = new char[paragrafo_size];
+                j=0;
             }
         }
     }
-    cout << paragrafo_final;
     return paragrafo_final;
 }

@@ -3,6 +3,8 @@
 	<iostream>
 	"dicionario.h"
 
+1541653983 o.h"
+
 1540136713 c:\users\desktop\documents\cpp\dicionariosinonimos\dicionario.h
 
 1540137754 source:c:\users\desktop\documents\cpp\dicionariosinonimos\dicionario.cpp
@@ -20,5 +22,18 @@
 
 1541653983 source:c:\users\desktop\documents\github\ed1\dicionariosinonimos\main.cpp
 	<iostream>
+	"dicionario.h"
+
+1541782645 source:/home/carlos_vinicios/Documentos/GitHub/ED1/DicionarioSinonimos/main.cpp
+	<iostream>
+	"dicionario.h"
+
+1541681512 /home/carlos_vinicios/Documentos/GitHub/ED1/DicionarioSinonimos/dicionario.h
+
+1541782905 source:/home/carlos_vinicios/Documentos/GitHub/ED1/DicionarioSinonimos/dicionario.cpp
+	<iostream>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
 	"dicionario.h"
 
