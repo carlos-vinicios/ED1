@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1543016337 source:/home/carlos_vinicios/Documentos/Arvore/main.cpp
+	<iostream>
+	"arvore.h"
+
+1543017875 /home/carlos_vinicios/Documentos/Arvore/arvore.h
+
+1543018383 source:/home/carlos_vinicios/Documentos/Arvore/arvore.cpp
+	<iostream>
+	<stdlib.h>
+	"arvore.h"
+	"lista.h"
+
+1540403132 source:/home/carlos_vinicios/Documentos/Arvore/lista.cpp
+	<stdlib.h>
+	"lista.h"
+
+1540403132 /home/carlos_vinicios/Documentos/Arvore/lista.h
+
