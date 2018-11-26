@@ -1,0 +1,7 @@
+executar-fazer;realizar;efetuar;praticar;desempenhar;
+testar-verificar;analisar;avaliar;experenciar;
+fazer-gerar;constituir;executar;realizar;efetuar;construir;
+efetuar-fazer;realizar;operar;formalizar;
+verificar-analisar;averiguar;apurar;indagar;
+analisar-verificar;investigar;explorar;averiguar;
+

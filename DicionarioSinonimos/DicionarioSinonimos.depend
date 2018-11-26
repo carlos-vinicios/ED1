@@ -24,13 +24,14 @@
 	<iostream>
 	"dicionario.h"
 
-1541782645 source:/home/carlos_vinicios/Documentos/GitHub/ED1/DicionarioSinonimos/main.cpp
+1541812940 source:/home/carlos_vinicios/Documentos/GitHub/ED1/DicionarioSinonimos/main.cpp
 	<iostream>
+	<string.h>
 	"dicionario.h"
 
-1541681512 /home/carlos_vinicios/Documentos/GitHub/ED1/DicionarioSinonimos/dicionario.h
+1541797107 /home/carlos_vinicios/Documentos/GitHub/ED1/DicionarioSinonimos/dicionario.h
 
-1541782905 source:/home/carlos_vinicios/Documentos/GitHub/ED1/DicionarioSinonimos/dicionario.cpp
+1541811074 source:/home/carlos_vinicios/Documentos/GitHub/ED1/DicionarioSinonimos/dicionario.cpp
 	<iostream>
 	<stdlib.h>
 	<string.h>

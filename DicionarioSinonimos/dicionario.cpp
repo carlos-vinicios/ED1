@@ -37,18 +37,23 @@ Palavra *criarPalavra(char *sintaxe){
 }
 
 Palavra *addPalavra(Dicionario *d, char *palavra){
-    Palavra *p1 = NULL;
-    if(d != NULL && palavra != NULL && strlen(palavra) > 0){
-        p1 = criarPalavra(to_lower(palavra));
-        if(d->cab == NULL && d->ult == NULL){
-            d->cab = p1;
-            d->ult = p1;
-        }else {
-            d->ult->prox = p1;
-            d->ult = p1;
+    Palavra *p1 = NULL, *p2 = NULL;
+    if(d != NULL && palavra != NULL && strlen(palavra) > 1){
+        p1 = buscarPalavra(d, palavra);
+        if(p1 == NULL){
+            p2 = criarPalavra(to_lower(palavra));
+            if(d->cab == NULL && d->ult == NULL){
+                d->cab = p2;
+                d->ult = p2;
+            }else {
+                d->ult->prox = p2;
+                d->ult = p2;
+            }
+        }else{
+            p1->qtd++;
         }
     }
-    return p1;
+    return p2;
 }
 
 int addSinonimo(Dicionario *d, char* palavra, char *sinonimo){
@@ -57,7 +62,7 @@ int addSinonimo(Dicionario *d, char* palavra, char *sinonimo){
         p = buscarPalavra(d, palavra); //busca pela palavra que será adicionado o sinonimo
         p1 = buscarPalavra(d, sinonimo); //verfica a existência do sinonimo dentro do dicionario
         if(p != NULL){
-            p2 = criarPalavra(sinonimo); //cria a palavra de sinonimo
+            p2 = criarPalavra(to_lower(sinonimo)); //cria a palavra de sinonimo
             if(p1 != NULL){
                 p1->qtd++; //caso o sinonimo já tenho sido cadastrado no dicionario, atualiza a quantidade
             }else{
@@ -78,17 +83,19 @@ int addSinonimo(Dicionario *d, char* palavra, char *sinonimo){
 
 Palavra *buscarPalavra(Dicionario *d, char *palavra){
     Palavra *aux;
-    if(strcmp(d->cab->sintaxe, palavra) == 0){
-        return d->cab;
-    }else if(strcmp(d->ult->sintaxe, palavra) == 0){
-        return d->ult;
-    }else{
-        aux = d->cab;
-        while(aux != NULL){
-            if(strcmp(aux->sintaxe, palavra) == 0){
-                return aux;
+    if(d != NULL && d->cab != NULL && palavra != NULL && strlen(palavra) > 1){
+        if(strcmp(d->cab->sintaxe, palavra) == 0){
+            return d->cab;
+        }else if(strcmp(d->ult->sintaxe, palavra) == 0){
+            return d->ult;
+        }else{
+            aux = d->cab;
+            while(aux != NULL){
+                if(strcmp(aux->sintaxe, palavra) == 0){
+                    return aux;
+                }
+                aux = aux->prox;
             }
-            aux = aux->prox;
         }
     }
     return NULL;
@@ -102,12 +109,14 @@ Palavra *substituirPalavra(Dicionario *d, char *palavra){
             aux = p->sinonimo;
             if(aux != NULL){
                 resp = buscarPalavra(d, aux->sintaxe);
-                aux = aux->prox;
-                while(aux != NULL){
-                    p2 = buscarPalavra(d, aux->sintaxe);
-                    if(p2->qtd < resp->qtd)
-                        resp = p2;
+                if(resp != NULL){
                     aux = aux->prox;
+                    while(aux != NULL){
+                        p2 = buscarPalavra(d, aux->sintaxe);
+                        if(p2->qtd < resp->qtd)
+                            resp = p2;
+                        aux = aux->prox;
+                    }
                 }
             }
         }
