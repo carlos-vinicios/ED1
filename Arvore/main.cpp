@@ -13,15 +13,7 @@ int main()
     inserir(arvore1, 4);
     inserir(arvore1, 2);
 
-    Arvore *arvore2 = criar(7);
-    inserir(arvore2, 10);
-    inserir(arvore2, 9);
-    inserir(arvore2, 11);
-    inserir(arvore2, 3);
-    inserir(arvore2, 4);
-    inserir(arvore2, 11);
-
-    cout << comparar_arvores(arvore1, arvore2);
+    cout << abpNumNodesHeightH(arvore1, 1);
 
     return 0;
 }

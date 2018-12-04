@@ -1,0 +1,23 @@
+A pré-ordem apresenta uma imcompatibilidade com as outras sequêcias
+
+Para o Inordem e Pós-ordem:
+        A
+       / \
+      /   \  
+     /     C
+    B     / \
+   / \   J   F
+  D   E
+ /   / \
+G   H   I
+
+Para o Pré-ordem:
+        A
+       / \
+      /   \  
+     /     C
+    B     / \
+   / \   F   J
+  D   E
+ /   / \
+G   H   I

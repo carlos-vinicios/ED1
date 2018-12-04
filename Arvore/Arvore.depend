@@ -17,3 +17,21 @@
 
 1540403132 /home/carlos_vinicios/Documentos/Arvore/lista.h
 
+1543018513 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Arvore/lista.cpp
+	<stdlib.h>
+	"lista.h"
+
+1543018473 /home/carlos_vinicios/Documentos/GitHub/ED1/Arvore/lista.h
+
+1543436208 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Arvore/main.cpp
+	<iostream>
+	"arvore.h"
+
+1543435643 /home/carlos_vinicios/Documentos/GitHub/ED1/Arvore/arvore.h
+
+1543436222 source:/home/carlos_vinicios/Documentos/GitHub/ED1/Arvore/arvore.cpp
+	<iostream>
+	<stdlib.h>
+	"arvore.h"
+	"lista.h"
+

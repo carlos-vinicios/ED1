@@ -174,3 +174,69 @@ int cont_element(Arvore *a, int elem){
     }
     return -1;
 }
+
+int ablsFull(Arvore *a){
+    int fd=1, fe=1;
+    if(a != NULL){
+        if(a->dir != NULL)
+            fd = ablsFull(a->dir);
+        if(a->esq != NULL)
+            fe = ablsFull(a->esq);
+        if((a->dir == NULL && a->esq == NULL || a->dir != NULL && a->esq != NULL) && fd && fe)
+            return 1;
+        else
+            return 0;
+    }
+    return 0;
+}
+
+int abpNumNodesHeightH(Arvore *a, int h){
+    int cont = 0, c_esq=0, c_dir=0;
+    if(a != NULL){
+        if(h == 0)
+            return 1;
+        if(a->dir != NULL)
+            c_dir += abpNumNodesHeightH(a->dir, h-1);
+        if(a->esq != NULL)
+            c_esq += abpNumNodesHeightH(a->esq, h-1);
+        return c_dir + c_esq;
+    }
+    return -1;
+}
+
+int espelhaArvore(Arvore *a){
+    Arvore *aux1, *aux2;
+    if(a != NULL){
+        if(a->dir != NULL)
+            espelhaArvore(a->dir);
+        if(a->esq != NULL)
+            espelhaArvore(a->esq);
+        if(a->dir != NULL){
+            aux1 = a->dir;
+            if(a->esq != NULL){
+                aux2 = a->esq;
+                a->dir = aux2;
+                a->esq = aux1;
+            }else{
+                a->esq = aux1;
+                delete[] a->dir;
+                a->dir = NULL;
+            }
+        }else{
+            if(a->esq != NULL){
+                aux1 = a->esq;
+                if(a->dir != NULL){
+                    aux2 = a->dir;
+                    a->esq = aux2;
+                    a->dir = aux1;
+                }else{
+                    a->dir = aux1;
+                    delete[] a->esq;
+                    a->esq = NULL;
+                }
+            }
+        }
+        return 1;
+    }
+    return 0;
+}

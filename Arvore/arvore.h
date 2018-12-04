@@ -26,3 +26,9 @@ void print_nivel(Arvore *a, int n);
 int comparar_arvores(Arvore *a1, Arvore *a2);
 
 int cont_element(Arvore *a, int elem);
+
+int ablsFull(Arvore *a);
+
+int abpNumNodesHeightH(Arvore *a, int h);
+
+int espelhaArvore(Arvore *a);
