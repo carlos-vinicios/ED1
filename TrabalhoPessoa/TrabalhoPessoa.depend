@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1544029135 source:/home/carlos_vinicios/Documentos/TrabalhoPessoa/arvore.cpp
+	<stdlib.h>
+	"arvore.h"
+
+1544028632 /home/carlos_vinicios/Documentos/TrabalhoPessoa/arvore.h
+
+1544029386 source:/home/carlos_vinicios/Documentos/TrabalhoPessoa/main.cpp
+	<iostream>
+
