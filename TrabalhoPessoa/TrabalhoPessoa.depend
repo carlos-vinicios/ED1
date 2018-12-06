@@ -8,3 +8,15 @@
 1544029386 source:/home/carlos_vinicios/Documentos/TrabalhoPessoa/main.cpp
 	<iostream>
 
+1544055363 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TrabalhoPessoa/arvore.cpp
+	<stdlib.h>
+	<string.h>
+	"arvore.h"
+
+1544052438 /home/carlos_vinicios/Documentos/GitHub/ED1/TrabalhoPessoa/arvore.h
+
+1544055212 source:/home/carlos_vinicios/Documentos/GitHub/ED1/TrabalhoPessoa/main.cpp
+	<stdlib.h>
+	<iostream>
+	"arvore.h"
+

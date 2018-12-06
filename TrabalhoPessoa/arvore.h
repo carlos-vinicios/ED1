@@ -25,7 +25,6 @@ typedef struct _ar_date_out_{
 
 typedef struct _lista_pessoa_{
     Pessoa *pessoa;
-    int qtd;
     _lista_pessoa_ *prox;
 } Lista;
 
@@ -39,17 +38,35 @@ int inserirArvoreNome(ArvoreNome *an, Pessoa *p);
 
 Lista *buscarArvoreNome(ArvoreNome *an, char *nome);
 
+ArvoreNome *buscarFolhaArvoreNome(ArvoreNome *an, char *nome);
+
+int removerArvoreNome(ArvoreNome *an, Pessoa *p);
+
+ArvoreNome *maiorArvoreNome(ArvoreNome *an);
+
 ArvoreDataEntrada *criarArvoreDataEntrada(Pessoa *p);
 
 int inserirArvoreDataEntrada(ArvoreDataEntrada *ade, Pessoa *p);
 
-Lista *buscarArvoreArvoreDataEntrada(ArvoreDataEntrada *ade, int data);
+Lista *buscarArvoreDataEntrada(ArvoreDataEntrada *ade, int data);
+
+ArvoreDataEntrada *buscarFolhaArvoreDataEntrada(ArvoreDataEntrada *ade, int data);
+
+int removerArvoreDataEntrada(ArvoreDataEntrada *ade, Pessoa *p);
+
+ArvoreDataEntrada *maiorArvoreDataEntrada(ArvoreDataEntrada *ade);
 
 ArvoreDataSaida *criarArvoreDataSaida(Pessoa *p);
 
 int inserirArvoreDataSaida(ArvoreDataSaida *ads, Pessoa *p);
 
 Lista *buscarArvoreDataSaida(ArvoreDataSaida *ads, int data);
+
+ArvoreDataSaida *buscarFolhaArvoreDataSaida(ArvoreDataSaida *ads, int data);
+
+int removerArvoreDataSaida(ArvoreDataSaida *ads, Pessoa *p);
+
+ArvoreDataSaida *maiorArvoreDataSaida(ArvoreDataSaida *ads);
 
 Lista *criarNoLista(Pessoa *p);
 

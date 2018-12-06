@@ -49,11 +49,11 @@ int inserirArvoreNome(ArvoreNome *an, Pessoa *p){
 }
 
 Lista *buscarArvoreNome(ArvoreNome *an, char *nome){ //e se tiver mais um "Carlos" - melhor retornar uma lista
-    ArvoreNome *aux = NULL
+    ArvoreNome *aux = NULL;
     Lista *pessoas = NULL;
     if(an != NULL){
         aux = an;
-        while(aux->pessoa != NULL){
+        while(aux != NULL){
             if(aux->pessoa->nome[0] == nome[0])
                 if(strstr(aux->pessoa->nome, nome) != NULL)
                     if(pessoas == NULL)
@@ -67,6 +67,60 @@ Lista *buscarArvoreNome(ArvoreNome *an, char *nome){ //e se tiver mais um "Carlo
         }
     }
     return pessoas;
+}
+
+ArvoreNome *buscarFolhaArvoreNome(ArvoreNome *an, char *nome){
+    ArvoreNome *aux = NULL;
+    if(an != NULL){
+        aux = an;
+        while(aux != NULL){
+            if(aux->pessoa->nome[0] == nome[0])
+                return aux;
+            if(aux->pessoa->nome[0] > nome[0])
+                aux = aux->dir;
+            else
+                aux = aux->esq;
+        }
+    }
+    return NULL;
+}
+
+int removerArvoreNome(ArvoreNome *an, Pessoa *p){
+    ArvoreNome *folha = NULL, *rem = NULL;
+    if(an != NULL){
+        rem = buscarFolhaArvoreNome(an, p->nome);
+        if(rem != NULL){
+            if(rem->dir != NULL && rem->esq != NULL){
+                folha = maiorArvoreNome(rem);
+                rem->pessoa = folha->pessoa;
+                return removerArvoreNome(rem->esq, folha->pessoa);
+            }else{
+                if(rem->dir != NULL){
+                    rem->pessoa = rem->dir->pessoa;
+                    return removerArvoreNome(rem->dir, rem->dir->pessoa);
+                }else{
+                    if(rem->esq != NULL){
+                        rem->pessoa = rem->esq->pessoa;
+                        return removerArvoreNome(rem->esq, rem->esq->pessoa);
+                    }else{
+                        delete[] rem;
+                        return 1;
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+ArvoreNome *maiorArvoreNome(ArvoreNome *an){
+    ArvoreNome *aux = NULL;
+    if(an != NULL){
+        aux = an;
+        while(aux != NULL)
+            aux = aux->dir;
+        return aux;
+    }
 }
 
 ArvoreDataEntrada *criarArvoreDataEntrada(Pessoa *p){
@@ -97,12 +151,12 @@ int inserirArvoreDataEntrada(ArvoreDataEntrada *ade, Pessoa *p){
     return 0;
 }
 
-Lista *buscarArvoreArvoreDataEntrada(ArvoreDataEntrada *ade, int data){//e se tiver mais um com a mesma data de entrada?
-    ArvoreDataEntrada *aux = NULL
+Lista *buscarArvoreDataEntrada(ArvoreDataEntrada *ade, int data){//e se tiver mais um com a mesma data de entrada?
+    ArvoreDataEntrada *aux = NULL;
     Lista *pessoas = NULL;
     if(ade != NULL){
         aux = ade;
-        while(aux->pessoa != NULL){
+        while(aux != NULL){
             if(aux->pessoa->date_in == data)
                 if(pessoas == NULL)
                     pessoas = criarNoLista(aux->pessoa);
@@ -115,6 +169,60 @@ Lista *buscarArvoreArvoreDataEntrada(ArvoreDataEntrada *ade, int data){//e se ti
         }
     }
     return pessoas;
+}
+
+ArvoreDataEntrada *buscarFolhaArvoreDataEntrada(ArvoreDataEntrada *ade, int data){
+    ArvoreDataEntrada *aux = NULL;
+    if(ade != NULL){
+        aux = ade;
+        while(aux != NULL){
+            if(aux->pessoa->date_in == data)
+                return aux;
+            if(data > aux->pessoa->date_in)
+                aux = aux->dir;
+            else
+                aux = aux->esq;
+        }
+    }
+    return NULL;
+}
+
+int removerArvoreDataEntrada(ArvoreDataEntrada *ade, Pessoa *p){
+    ArvoreDataEntrada *folha = NULL, *rem = NULL;
+    if(ade != NULL){
+        rem = buscarFolhaArvoreDataEntrada(ade, p->date_in);
+        if(rem != NULL){
+            if(rem->dir != NULL && rem->esq != NULL){
+                folha = maiorArvoreDataEntrada(rem);
+                rem->pessoa = folha->pessoa;
+                return removerArvoreDataEntrada(rem->esq, folha->pessoa);
+            }else{
+                if(rem->dir != NULL){
+                    rem->pessoa = rem->dir->pessoa;
+                    return removerArvoreDataEntrada(rem->dir, rem->dir->pessoa);
+                }else{
+                    if(rem->esq != NULL){
+                        rem->pessoa = rem->esq->pessoa;
+                        return removerArvoreDataEntrada(rem->esq, rem->esq->pessoa);
+                    }else{
+                        delete[] rem;
+                        return 1;
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+ArvoreDataEntrada *maiorArvoreDataEntrada(ArvoreDataEntrada *ade){
+    ArvoreDataEntrada *aux = NULL;
+    if(ade != NULL){
+        aux = ade;
+        while(aux != NULL)
+            aux = aux->dir;
+        return aux;
+    }
 }
 
 ArvoreDataSaida *criarArvoreDataSaida(Pessoa *p){
@@ -146,11 +254,11 @@ int inserirArvoreDataSaida(ArvoreDataSaida *ads, Pessoa *p){
 }
 
 Lista *buscarArvoreDataSaida(ArvoreDataSaida *ads, int data){//e se tiver mais de um com a mesma data de saida?
-    ArvoreDataSaida *aux = NULL
+    ArvoreDataSaida *aux = NULL;
     Lista *pessoas = NULL;
     if(ads != NULL){
         aux = ads;
-        while(aux->pessoa != NULL){
+        while(aux != NULL){
             if(aux->pessoa->date_out == data)
                 if(pessoas == NULL)
                     pessoas = criarNoLista(aux->pessoa);
@@ -165,10 +273,63 @@ Lista *buscarArvoreDataSaida(ArvoreDataSaida *ads, int data){//e se tiver mais d
     return pessoas;
 }
 
+ArvoreDataSaida *buscarFolhaArvoreDataSaida(ArvoreDataSaida *ads, int data){
+    ArvoreDataSaida *aux = NULL;
+    if(ads != NULL){
+        aux = ads;
+        while(aux != NULL){
+            if(aux->pessoa->date_in == data)
+                return aux;
+            if(data > aux->pessoa->date_in)
+                aux = aux->dir;
+            else
+                aux = aux->esq;
+        }
+    }
+    return NULL;
+}
+
+int removerArvoreDataSaida(ArvoreDataSaida *ads, Pessoa *p){
+    ArvoreDataSaida *folha = NULL, *rem = NULL;
+    if(ads != NULL){
+        rem = buscarFolhaArvoreDataSaida(ads, p->date_in);
+        if(rem != NULL){
+            if(rem->dir != NULL && rem->esq != NULL){
+                folha = maiorArvoreDataSaida(rem);
+                rem->pessoa = folha->pessoa;
+                return removerArvoreDataSaida(rem->esq, folha->pessoa);
+            }else{
+                if(rem->dir != NULL){
+                    rem->pessoa = rem->dir->pessoa;
+                    return removerArvoreDataSaida(rem->dir, rem->dir->pessoa);
+                }else{
+                    if(rem->esq != NULL){
+                        rem->pessoa = rem->esq->pessoa;
+                        return removerArvoreDataSaida(rem->esq, rem->esq->pessoa);
+                    }else{
+                        delete[] rem;
+                        return 1;
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+ArvoreDataSaida *maiorArvoreDataSaida(ArvoreDataSaida *ads){
+    ArvoreDataSaida *aux = NULL;
+    if(ads != NULL){
+        aux = ads;
+        while(aux != NULL)
+            aux = aux->dir;
+        return aux;
+    }
+}
+
 Lista *criarNoLista(Pessoa *p){
     Lista *l = new Lista[1];
     l->pessoa = p;
-    l->qtd = 1;
     l->prox = NULL;
     return l;
 }
@@ -176,7 +337,7 @@ Lista *criarNoLista(Pessoa *p){
 int acrescentar(Lista *l, Pessoa *p){
     Lista *novo = NULL;
     if(l != NULL){
-        novo = criarLista(p);
+        novo = criarNoLista(p);
         novo->prox = l;
         l = novo;
         return 1;
